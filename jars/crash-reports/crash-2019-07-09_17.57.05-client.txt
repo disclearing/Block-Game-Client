@@ -1,0 +1,124 @@
+---- Minecraft Crash Report ----
+// Oh - I know what I did wrong!
+
+Time: 7/9/19 5:57 PM
+Description: Rendering Block Entity
+
+java.lang.NullPointerException: Rendering Block Entity
+	at com.google.common.cache.LocalCache$Segment.drainRecencyQueue(LocalCache.java:2587)
+	at com.google.common.cache.LocalCache$Segment.expireEntries(LocalCache.java:2616)
+	at com.google.common.cache.LocalCache$Segment.tryExpireEntries(LocalCache.java:2606)
+	at com.google.common.cache.LocalCache$Segment.getLiveValue(LocalCache.java:2742)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2179)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3936)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4806)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4812)
+	at net.minecraft.client.resources.SkinManager.func_152788_a(SkinManager.java:155)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.func_152674_a(TileEntitySkullRenderer.java:65)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderTileEntityAt(TileEntitySkullRenderer.java:30)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderTileEntityAt(TileEntitySkullRenderer.java:122)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.func_147549_a(TileEntityRendererDispatcher.java:126)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.func_147544_a(TileEntityRendererDispatcher.java:114)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:725)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1590)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1317)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1080)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:976)
+	at net.minecraft.client.main.Main.main(Main.java:161)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at com.google.common.cache.LocalCache$Segment.drainRecencyQueue(LocalCache.java:2587)
+	at com.google.common.cache.LocalCache$Segment.expireEntries(LocalCache.java:2616)
+	at com.google.common.cache.LocalCache$Segment.tryExpireEntries(LocalCache.java:2606)
+	at com.google.common.cache.LocalCache$Segment.getLiveValue(LocalCache.java:2742)
+	at com.google.common.cache.LocalCache$Segment.get(LocalCache.java:2179)
+	at com.google.common.cache.LocalCache.get(LocalCache.java:3932)
+	at com.google.common.cache.LocalCache.getOrLoad(LocalCache.java:3936)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.get(LocalCache.java:4806)
+	at com.google.common.cache.LocalCache$LocalLoadingCache.getUnchecked(LocalCache.java:4812)
+	at net.minecraft.client.resources.SkinManager.func_152788_a(SkinManager.java:155)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.func_152674_a(TileEntitySkullRenderer.java:65)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderTileEntityAt(TileEntitySkullRenderer.java:30)
+	at net.minecraft.client.renderer.tileentity.TileEntitySkullRenderer.renderTileEntityAt(TileEntitySkullRenderer.java:122)
+
+-- Block Entity Details --
+Details:
+	Name: Skull // net.minecraft.tileentity.TileEntitySkull
+	Block type: ID #144 (tile.skull // net.minecraft.block.BlockSkull)
+	Block data value: 1 / 0x1 / 0b0001
+	Block location: World: (-3544,215,1161), Chunk: (at 8,13,9 in -222,72; contains blocks -3552,0,1152 to -3537,255,1167), Region: (-7,2; contains chunks -224,64 to -193,95, blocks -3584,0,1024 to -3073,255,1535)
+	Actual block type: ID #144 (tile.skull // net.minecraft.block.BlockSkull)
+	Actual block data value: 1 / 0x1 / 0b0001
+Stacktrace:
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.func_147549_a(TileEntityRendererDispatcher.java:126)
+	at net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher.func_147544_a(TileEntityRendererDispatcher.java:114)
+	at net.minecraft.client.renderer.RenderGlobal.renderEntities(RenderGlobal.java:725)
+	at net.minecraft.client.renderer.EntityRenderer.renderWorld(EntityRenderer.java:1590)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player893'/24, l='MpServer', x=-3520.76, y=216.62, z=1151.44]]
+	Chunk stats: MultiplayerChunkCache: 120, 120
+	Level seed: 0
+	Level generator: ID 01 - flat, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (-3516,219,1157), Chunk: (at 4,13,5 in -220,72; contains blocks -3520,0,1152 to -3505,255,1167), Region: (-7,2; contains chunks -224,64 to -193,95, blocks -3584,0,1024 to -3073,255,1535)
+	Level time: 82325879 game time, 96000 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 1 total; [EntityClientPlayerMP['Player893'/24, l='MpServer', x=-3520.76, y=216.62, z=1151.44]]
+	Retry entities: 0 total; []
+	Server brand: BlockSpigot
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:406)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2649)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:998)
+	at net.minecraft.client.main.Main.main(Main.java:161)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Mac OS X (x86_64) version 10.9.5
+	Java Version: 1.8.0_181, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 953773880 bytes (909 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: mcp
+	LWJGL: 2.9.1
+	OpenGL: Intel HD Graphics 5000 OpenGL Engine GL version 2.1 INTEL-8.28.37, Intel Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because ARB_framebuffer_object is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Definitely; Client brand changed to 'Block-Client'
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)
+	OptiFine Version: OptiFine_1.7.10_HD_U_D4
+	Render Distance Chunks: 12
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	OpenGlVersion: 2.1 INTEL-8.28.37
+	OpenGlRenderer: Intel HD Graphics 5000 OpenGL Engine
+	OpenGlVendor: Intel Inc.
+	CpuCount: 4

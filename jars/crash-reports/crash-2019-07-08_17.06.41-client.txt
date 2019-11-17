@@ -1,0 +1,92 @@
+---- Minecraft Crash Report ----
+// Daisy, daisy...
+
+Time: 7/8/19 5:06 PM
+Description: Unexpected error
+
+java.lang.IllegalArgumentException: Modifier is already applied on this attribute!
+	at net.minecraft.entity.ai.attributes.ModifiableAttributeInstance.applyModifier(ModifiableAttributeInstance.java:90)
+	at net.minecraft.client.network.NetHandlerPlayClient.handleEntityProperties(NetHandlerPlayClient.java:1856)
+	at net.minecraft.network.play.server.S20PacketEntityProperties.processPacket(S20PacketEntityProperties.java:91)
+	at net.minecraft.network.play.server.S20PacketEntityProperties.processPacket(S20PacketEntityProperties.java:106)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:251)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.updateController(PlayerControllerMP.java:318)
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1702)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1052)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:975)
+	at net.minecraft.client.main.Main.main(Main.java:161)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.entity.ai.attributes.ModifiableAttributeInstance.applyModifier(ModifiableAttributeInstance.java:90)
+	at net.minecraft.client.network.NetHandlerPlayClient.handleEntityProperties(NetHandlerPlayClient.java:1856)
+	at net.minecraft.network.play.server.S20PacketEntityProperties.processPacket(S20PacketEntityProperties.java:91)
+	at net.minecraft.network.play.server.S20PacketEntityProperties.processPacket(S20PacketEntityProperties.java:106)
+	at net.minecraft.network.NetworkManager.processReceivedPackets(NetworkManager.java:251)
+	at net.minecraft.client.multiplayer.PlayerControllerMP.updateController(PlayerControllerMP.java:318)
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player97'/141, l='MpServer', x=575.20, y=70.62, z=145.95]]
+	Chunk stats: MultiplayerChunkCache: 596, 605
+	Level seed: 0
+	Level generator: ID 02 - largeBiomes, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (584,64,166), Chunk: (at 8,4,6 in 36,10; contains blocks 576,0,160 to 591,255,175), Region: (1,0; contains chunks 32,0 to 63,31, blocks 512,0,0 to 1023,255,511)
+	Level time: 53288 game time, 52668 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+	Forced entities: 84 total; [EntityCreeper['Creeper'/3, l='MpServer', x=499.50, y=22.00, z=159.50], EntityCreeper['Creeper'/4, l='MpServer', x=498.50, y=22.00, z=159.50], EntityCreeper['Creeper'/5, l='MpServer', x=496.50, y=22.00, z=159.50], EntitySpider['Spider'/6, l='MpServer', x=527.25, y=41.00, z=77.47], EntityZombie['Zombie'/8, l='MpServer', x=516.50, y=31.00, z=96.50], EntitySpider['Spider'/9, l='MpServer', x=527.72, y=18.30, z=141.72], EntitySquid['Squid'/10, l='MpServer', x=521.50, y=61.31, z=127.16], EntitySquid['Squid'/11, l='MpServer', x=511.09, y=58.22, z=135.50], EntityZombie['Zombie'/12, l='MpServer', x=516.50, y=52.00, z=176.50], EntityClientPlayerMP['Player97'/141, l='MpServer', x=575.20, y=70.62, z=145.95], EntityBat['Bat'/20, l='MpServer', x=542.56, y=42.10, z=111.00], EntityBat['Bat'/21, l='MpServer', x=524.13, y=11.84, z=161.58], EntityCreeper['Creeper'/27, l='MpServer', x=553.50, y=19.00, z=170.50], EntitySkeleton['Skeleton'/28, l='MpServer', x=547.91, y=20.00, z=171.50], EntityCreeper['Creeper'/29, l='MpServer', x=559.50, y=18.00, z=186.50], EntitySkeleton['Skeleton'/30, l='MpServer', x=546.50, y=55.00, z=186.50], EntityCreeper['Creeper'/37, l='MpServer', x=575.53, y=53.00, z=125.94], EntityBat['Bat'/38, l='MpServer', x=566.25, y=53.10, z=132.50], EntityBat['Bat'/39, l='MpServer', x=572.69, y=54.10, z=131.25], EntityCreeper['Creeper'/40, l='MpServer', x=567.59, y=52.00, z=135.00], EntityCreeper['Creeper'/41, l='MpServer', x=574.00, y=54.00, z=135.41], EntitySpider['Spider'/42, l='MpServer', x=574.27, y=56.69, z=136.26], EntityCreeper['Creeper'/43, l='MpServer', x=579.13, y=55.00, z=143.50], EntityCreeper['Creeper'/44, l='MpServer', x=576.38, y=57.00, z=146.94], EntityCreeper['Creeper'/45, l='MpServer', x=576.28, y=55.00, z=141.68], EntityZombie['Zombie'/46, l='MpServer', x=569.53, y=58.00, z=141.91], EntityCreeper['Creeper'/47, l='MpServer', x=563.59, y=22.00, z=172.34], EntityCreeper['Creeper'/48, l='MpServer', x=574.03, y=43.00, z=182.34], EntityZombie['Zombie'/49, l='MpServer', x=579.06, y=39.00, z=155.53], EntityBat['Bat'/50, l='MpServer', x=568.65, y=39.85, z=159.74], EntityCreeper['Creeper'/52, l='MpServer', x=559.66, y=20.00, z=195.91], EntityZombie['Zombie'/55, l='MpServer', x=576.50, y=54.00, z=123.94], EntityCreeper['Creeper'/56, l='MpServer', x=589.50, y=52.00, z=138.50], EntitySkeleton['Skeleton'/57, l='MpServer', x=590.97, y=26.00, z=152.31], EntitySkeleton['Skeleton'/58, l='MpServer', x=589.97, y=26.00, z=152.69], EntityZombie['Zombie'/59, l='MpServer', x=576.91, y=43.00, z=155.56], EntitySpider['Spider'/60, l='MpServer', x=587.50, y=22.00, z=171.50], EntityZombie['Zombie'/61, l='MpServer', x=589.50, y=22.00, z=172.50], EntityCreeper['Creeper'/62, l='MpServer', x=585.31, y=27.00, z=162.88], EntityCreeper['Creeper'/63, l='MpServer', x=578.84, y=29.00, z=165.47], EntitySkeleton['Skeleton'/64, l='MpServer', x=573.50, y=39.00, z=157.16], EntityCreeper['Creeper'/65, l='MpServer', x=581.44, y=37.00, z=168.47], EntityCreeper['Creeper'/66, l='MpServer', x=583.16, y=37.00, z=172.22], EntityEnderman['Enderman'/67, l='MpServer', x=582.16, y=37.00, z=173.06], EntitySkeleton['Skeleton'/68, l='MpServer', x=574.75, y=40.00, z=156.88], EntityBat['Bat'/72, l='MpServer', x=603.38, y=55.10, z=126.25], EntityBat['Bat'/73, l='MpServer', x=601.63, y=54.10, z=128.97], EntityCreeper['Creeper'/74, l='MpServer', x=593.50, y=24.00, z=175.50], EntitySkeleton['Skeleton'/75, l='MpServer', x=596.50, y=44.00, z=161.50], EntityCreeper['Creeper'/76, l='MpServer', x=602.59, y=45.00, z=164.97], EntityCreeper['Creeper'/77, l='MpServer', x=607.44, y=47.00, z=172.47], EntityEnderman['Enderman'/78, l='MpServer', x=604.53, y=47.00, z=170.78], EntityCreeper['Creeper'/79, l='MpServer', x=604.13, y=45.00, z=171.69], EntitySkeleton['Skeleton'/81, l='MpServer', x=595.47, y=24.00, z=177.00], EntityCreeper['Creeper'/82, l='MpServer', x=596.50, y=25.00, z=178.50], EntitySpider['Spider'/83, l='MpServer', x=602.72, y=34.00, z=187.72], EntityCreeper['Creeper'/84, l='MpServer', x=600.50, y=35.00, z=179.50], EntitySquid['Squid'/85, l='MpServer', x=605.78, y=56.00, z=200.50], EntityMinecartChest['entity.MinecartChest.name'/87, l='MpServer', x=613.50, y=12.50, z=82.50], EntityCreeper['Creeper'/88, l='MpServer', x=624.03, y=13.00, z=119.38], EntityZombie['Zombie'/89, l='MpServer', x=610.44, y=47.00, z=169.31], EntityWitch['Witch'/90, l='MpServer', x=610.59, y=47.00, z=170.28], EntityEnderman['Enderman'/91, l='MpServer', x=607.97, y=48.00, z=173.72], EntityCreeper['Creeper'/92, l='MpServer', x=617.59, y=53.00, z=165.41], EntityCreeper['Creeper'/93, l='MpServer', x=614.50, y=53.00, z=171.50], EntityCreeper['Creeper'/94, l='MpServer', x=612.50, y=35.00, z=185.50], EntitySquid['Squid'/95, l='MpServer', x=612.31, y=60.38, z=193.50], EntityZombie['Zombie'/480, l='MpServer', x=597.50, y=33.00, z=191.50], EntitySkeleton['Skeleton'/481, l='MpServer', x=513.50, y=52.00, z=176.50], EntityCreeper['Creeper'/101, l='MpServer', x=625.50, y=13.00, z=120.50], EntityCreeper['Creeper'/102, l='MpServer', x=628.00, y=12.00, z=125.41], EntityZombie['Zombie'/103, l='MpServer', x=630.50, y=37.00, z=173.97], EntityCreeper['Creeper'/487, l='MpServer', x=622.50, y=19.00, z=198.50], EntityBat['Bat'/104, l='MpServer', x=627.21, y=37.05, z=174.33], EntityCreeper['Creeper'/488, l='MpServer', x=513.50, y=39.00, z=198.50], EntityBat['Bat'/105, l='MpServer', x=626.75, y=39.02, z=176.25], EntityZombie['Zombie'/489, l='MpServer', x=513.50, y=39.00, z=197.50], EntityBat['Bat'/106, l='MpServer', x=624.75, y=15.10, z=201.38], EntityCreeper['Creeper'/490, l='MpServer', x=514.50, y=39.00, z=197.50], EntitySkeleton['Skeleton'/107, l='MpServer', x=634.50, y=14.00, z=224.50], EntityBat['Bat'/113, l='MpServer', x=640.72, y=22.00, z=206.38], EntityBat['Bat'/116, l='MpServer', x=642.28, y=22.00, z=206.38], EntityBat['Bat'/117, l='MpServer', x=650.88, y=22.00, z=210.25], EntityBat['Bat'/118, l='MpServer', x=648.41, y=22.00, z=207.66]]
+	Retry entities: 0 total; []
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:406)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2646)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:1004)
+	at net.minecraft.client.main.Main.main(Main.java:161)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Mac OS X (x86_64) version 10.9.5
+	Java Version: 1.8.0_181, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 765510888 bytes (730 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 102
+	Launched Version: mcp
+	LWJGL: 2.9.1
+	OpenGL: Intel HD Graphics 5000 OpenGL Engine GL version 2.1 INTEL-8.28.37, Intel Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because ARB_framebuffer_object is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)
+	OptiFine Version: OptiFine_1.7.10_HD_U_D4
+	Render Distance Chunks: 12
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	OpenGlVersion: 2.1 INTEL-8.28.37
+	OpenGlRenderer: Intel HD Graphics 5000 OpenGL Engine
+	OpenGlVendor: Intel Inc.
+	CpuCount: 4

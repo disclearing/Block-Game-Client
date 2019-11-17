@@ -1,0 +1,104 @@
+---- Minecraft Crash Report ----
+// Quite honestly, I wouldn't worry myself about that.
+
+Time: 7/11/19 12:17 PM
+Description: Registering texture
+
+java.lang.NullPointerException: Registering texture
+	at net.minecraft.client.renderer.texture.TextureUtil.uploadTextureImageAllocate(TextureUtil.java:147)
+	at net.minecraft.client.renderer.texture.SimpleTexture.loadTexture(SimpleTexture.java:56)
+	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:95)
+	at net.minecraft.client.renderer.texture.TextureManager.bindTexture(TextureManager.java:51)
+	at net.minecraft.client.gui.GuiMainMenu.drawGui(GuiMainMenu.java:501)
+	at us.blockgame.client.gui.impl.ModMenuGui.drawScreen(ModMenuGui.java:29)
+	at net.minecraft.client.renderer.EntityRenderer.updateCameraAndRender(EntityRenderer.java:1384)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:1119)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:1015)
+	at net.minecraft.client.main.Main.main(Main.java:161)
+	at Start.main(Start.java:11)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.client.renderer.texture.TextureUtil.uploadTextureImageAllocate(TextureUtil.java:147)
+	at net.minecraft.client.renderer.texture.SimpleTexture.loadTexture(SimpleTexture.java:56)
+
+-- Resource location being registered --
+Details:
+	Resource location: minecraft:gui.png
+	Texture object class: net.minecraft.client.renderer.texture.SimpleTexture
+Stacktrace:
+	at net.minecraft.client.renderer.texture.TextureManager.loadTexture(TextureManager.java:95)
+	at net.minecraft.client.renderer.texture.TextureManager.bindTexture(TextureManager.java:51)
+	at net.minecraft.client.gui.GuiMainMenu.drawGui(GuiMainMenu.java:501)
+	at us.blockgame.client.gui.impl.ModMenuGui.drawScreen(ModMenuGui.java:29)
+
+-- Screen render details --
+Details:
+	Screen name: us.blockgame.client.gui.impl.ModMenuGui
+	Mouse location: Scaled: (262, 81). Absolute: (524, 316)
+	Screen size: Scaled: (427, 240). Absolute: (854, 480). Scale factor of 2
+
+-- Affected level --
+Details:
+	Level name: MpServer
+	All players: 1 total; [EntityClientPlayerMP['Player698'/74, l='MpServer', x=597.57, y=69.62, z=371.16]]
+	Chunk stats: MultiplayerChunkCache: 125, 134
+	Level seed: 0
+	Level generator: ID 02 - largeBiomes, ver 0. Features enabled: false
+	Level generator options: 
+	Level spawn location: World: (584,64,166), Chunk: (at 8,4,6 in 36,10; contains blocks 576,0,160 to 591,255,175), Region: (1,0; contains chunks 32,0 to 63,31, blocks 512,0,0 to 1023,255,511)
+	Level time: 96204 game time, 95584 day time
+	Level dimension: 0
+	Level storage version: 0x00000 - Unknown?
+	Level weather: Rain time: 0 (now: false), thunder time: 0 (now: false)
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: false
+	Forced entities: 57 total; [EntityBat['Bat'/6, l='MpServer', x=530.30, y=44.00, z=358.94], EntityCreeper['Creeper'/7, l='MpServer', x=537.47, y=46.00, z=355.75], EntitySkeleton['Skeleton'/8, l='MpServer', x=538.06, y=46.00, z=356.66], EntitySkeleton['Skeleton'/12, l='MpServer', x=566.44, y=29.00, z=293.56], EntityZombie['Zombie'/13, l='MpServer', x=563.88, y=58.00, z=298.59], EntitySkeleton['Skeleton'/14, l='MpServer', x=569.38, y=56.00, z=303.06], EntitySkeleton['Skeleton'/15, l='MpServer', x=565.09, y=36.00, z=330.34], EntitySkeleton['Skeleton'/16, l='MpServer', x=562.78, y=36.00, z=333.44], EntityCreeper['Creeper'/17, l='MpServer', x=566.25, y=36.00, z=334.09], EntityCreeper['Creeper'/18, l='MpServer', x=564.59, y=36.00, z=323.97], EntityCreeper['Creeper'/19, l='MpServer', x=562.50, y=32.00, z=329.50], EntityCreeper['Creeper'/20, l='MpServer', x=562.50, y=32.00, z=331.50], EntitySkeleton['Skeleton'/21, l='MpServer', x=564.50, y=32.00, z=330.50], EntitySkeleton['Skeleton'/22, l='MpServer', x=567.78, y=32.00, z=321.78], EntitySkeleton['Skeleton'/23, l='MpServer', x=567.50, y=31.00, z=337.91], EntityCreeper['Creeper'/24, l='MpServer', x=582.50, y=11.00, z=311.50], EntityCreeper['Creeper'/25, l='MpServer', x=580.50, y=11.00, z=308.50], EntityZombie['Zombie'/26, l='MpServer', x=585.34, y=11.00, z=311.34], EntityZombie['Zombie'/27, l='MpServer', x=584.50, y=11.00, z=311.50], EntityBat['Bat'/28, l='MpServer', x=583.59, y=14.10, z=367.56], EntityItem['item.item.arrow'/29, l='MpServer', x=585.34, y=72.13, z=354.88], EntityItem['item.item.bone'/30, l='MpServer', x=584.63, y=72.13, z=359.78], EntityCreeper['Creeper'/32, l='MpServer', x=600.47, y=28.00, z=310.75], EntityCreeper['Creeper'/33, l='MpServer', x=601.53, y=28.00, z=311.13], EntityCreeper['Creeper'/34, l='MpServer', x=597.38, y=29.00, z=311.66], EntityCreeper['Creeper'/35, l='MpServer', x=598.84, y=72.00, z=315.50], EntityZombie['Zombie'/36, l='MpServer', x=594.94, y=72.00, z=324.34], EntityBat['Bat'/43, l='MpServer', x=614.47, y=33.10, z=336.88], EntitySkeleton['Skeleton'/44, l='MpServer', x=622.50, y=32.00, z=348.50], EntityCreeper['Creeper'/45, l='MpServer', x=623.50, y=32.00, z=347.50], EntityMinecartChest['entity.MinecartChest.name'/48, l='MpServer', x=630.50, y=35.50, z=324.50], EntitySkeleton['Skeleton'/49, l='MpServer', x=625.50, y=32.00, z=347.50], EntityCreeper['Creeper'/50, l='MpServer', x=626.50, y=32.00, z=349.50], EntityZombie['Zombie'/51, l='MpServer', x=634.31, y=32.00, z=348.78], EntityZombie['Zombie'/52, l='MpServer', x=639.91, y=36.00, z=348.44], EntityBat['Bat'/56, l='MpServer', x=651.88, y=23.00, z=314.25], EntitySkeleton['Skeleton'/57, l='MpServer', x=648.50, y=22.00, z=311.50], EntitySkeleton['Skeleton'/58, l='MpServer', x=645.66, y=22.00, z=311.41], EntitySkeleton['Skeleton'/59, l='MpServer', x=645.41, y=22.00, z=312.56], EntityZombie['Zombie'/60, l='MpServer', x=650.34, y=22.00, z=311.34], EntityCreeper['Creeper'/61, l='MpServer', x=641.59, y=71.00, z=307.00], EntityZombie['Zombie'/62, l='MpServer', x=643.22, y=32.00, z=342.75], EntityCreeper['Creeper'/63, l='MpServer', x=658.17, y=32.16, z=343.06], EntityZombie['Zombie'/65, l='MpServer', x=675.16, y=75.00, z=315.50], EntityMinecartChest['entity.MinecartChest.name'/75, l='MpServer', x=592.50, y=24.50, z=378.50], EntityClientPlayerMP['Player698'/74, l='MpServer', x=597.57, y=69.62, z=371.16], EntityZombie['Zombie'/88, l='MpServer', x=520.50, y=71.00, z=406.50], EntitySkeleton['Skeleton'/89, l='MpServer', x=524.50, y=74.00, z=421.50], EntityBat['Bat'/90, l='MpServer', x=531.41, y=49.00, z=397.46], EntityCreeper['Creeper'/97, l='MpServer', x=583.50, y=14.00, z=371.50], EntitySkeleton['Skeleton'/98, l='MpServer', x=584.50, y=14.00, z=369.50], EntitySkeleton['Skeleton'/99, l='MpServer', x=581.50, y=14.00, z=369.50], EntityCreeper['Creeper'/101, l='MpServer', x=603.50, y=71.00, z=426.50], EntityBat['Bat'/103, l='MpServer', x=632.09, y=36.10, z=372.66], EntityCreeper['Creeper'/104, l='MpServer', x=652.50, y=72.00, z=377.50], EntitySpider['Spider'/105, l='MpServer', x=667.84, y=67.00, z=431.09], EntityZombie['Zombie'/106, l='MpServer', x=676.50, y=36.00, z=400.50]]
+	Retry entities: 0 total; []
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.WorldClient.addWorldInfoToCrashReport(WorldClient.java:406)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2726)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:1037)
+	at net.minecraft.client.main.Main.main(Main.java:161)
+	at Start.main(Start.java:11)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Mac OS X (x86_64) version 10.9.5
+	Java Version: 1.8.0_181, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 729661120 bytes (695 MB) / 1038876672 bytes (990 MB) up to 1038876672 bytes (990 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx1024M -Xms1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 102
+	Launched Version: mcp
+	LWJGL: 2.9.1
+	OpenGL: Intel HD Graphics 5000 OpenGL Engine GL version 2.1 INTEL-8.28.37, Intel Inc.
+	GL Caps: Using GL 1.3 multitexturing.
+Using framebuffer objects because ARB_framebuffer_object is supported and separate blending is supported.
+Anisotropic filtering is supported and maximum anisotropy is 16.
+Shaders are available because OpenGL 2.1 is supported.
+
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: English (US)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	Anisotropic Filtering: Off (1)
+	OptiFine Version: OptiFine_1.7.10_HD_U_D4
+	Render Distance Chunks: 12
+	Mipmaps: 4
+	Anisotropic Filtering: 1
+	Antialiasing: 0
+	Multitexture: false
+	OpenGlVersion: 2.1 INTEL-8.28.37
+	OpenGlRenderer: Intel HD Graphics 5000 OpenGL Engine
+	OpenGlVendor: Intel Inc.
+	CpuCount: 4
